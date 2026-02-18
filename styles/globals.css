@@ -5,13 +5,25 @@
 }
 
 :root {
-  --landing-bg: #060d1a;
-  --landing-surface: #0d1b2e;
-  --landing-surface2: #112240;
-  --landing-accent: #00c2ff;
-  --landing-text: #e8f4ff;
-  --landing-muted: #7a99bb;
-  --landing-border: rgba(0, 194, 255, 0.12);
+  --white: #ffffff;
+  --off-white: #f8f7f4;
+  --surface: #f2f1ee;
+  --border: #e3e1db;
+  --border-light: #eeede9;
+  --ink: #1a1916;
+  --ink-2: #3d3c38;
+  --ink-3: #7a7870;
+  --accent: #1a6b4a;         /* deep green — clinical trust */
+  --accent-light: #e8f4ef;
+  --accent-mid: #2d8f64;
+  --gold: #b07d2e;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --radius: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
 }
 
 body {
