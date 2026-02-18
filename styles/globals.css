@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --landing-bg: #060d1a;
+  --landing-surface: #0d1b2e;
+  --landing-surface2: #112240;
+  --landing-accent: #00c2ff;
+  --landing-text: #e8f4ff;
+  --landing-muted: #7a99bb;
+  --landing-border: rgba(0, 194, 255, 0.12);
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f0f4f8;
