@@ -388,7 +388,7 @@ export default function Dashboard() {
               <label className={styles.patientInputLabel}>Enter Patient ID or Profile Link</label>
               <input
                 className={styles.patientInput}
-                placeholder="e.g. 42  or  http://localhost:3000/patient/42"
+                placeholder="e.g. 42  or  https://frontend-medic-production.up.railway.app/patient/42"
                 value={patientInput}
                 onChange={(e) => setPatientInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handlePatientSearch()}

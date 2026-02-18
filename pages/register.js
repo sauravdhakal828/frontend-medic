@@ -102,7 +102,7 @@ export default function Register() {
       <Toaster />
       <div className={styles.card}>
         <div className={styles.logoWrap}>
-          <h1 className={styles.logo}>💊 PharmaChain</h1>
+          <h1 className={styles.logo}>PharmaChain</h1>
         </div>
 
         <h2 className={styles.title}>Complete your profile</h2>
@@ -112,7 +112,7 @@ export default function Register() {
           <img src={user.avatar} alt="avatar" className={styles.avatar} />
         )}
         {user?.email && (
-          <span className={styles.emailBadge}>📧 {user.email}</span>
+          <span className={styles.emailBadge}>{user.email}</span>
         )}
 
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -139,7 +139,6 @@ export default function Register() {
                 className={`${styles.roleCard} ${role === "CONSUMER" ? styles.roleCardActive : ""}`}
                 onClick={() => setRole("CONSUMER")}
               >
-                <p className={styles.roleIcon}>🧑‍⚕️</p>
                 <p className={styles.roleTitle}>Consumer</p>
                 <p className={styles.roleDesc}>View my prescriptions</p>
               </div>
@@ -147,7 +146,6 @@ export default function Register() {
                 className={`${styles.roleCard} ${role === "PHARMACY" ? styles.roleCardActive : ""}`}
                 onClick={() => setRole("PHARMACY")}
               >
-                <p className={styles.roleIcon}>🏥</p>
                 <p className={styles.roleTitle}>Pharmacy</p>
                 <p className={styles.roleDesc}>Manage prescriptions</p>
               </div>
@@ -158,7 +156,6 @@ export default function Register() {
           {role === "PHARMACY" && (
             <div className={styles.pharmacySection}>
               <div className={styles.pharmacySectionHeader}>
-                <span className={styles.pharmacySectionIcon}>🏥</span>
                 <p className={styles.pharmacySectionTitle}>Pharmacy Details</p>
               </div>
 
@@ -183,7 +180,6 @@ export default function Register() {
 
                 {!licencePreview ? (
                   <label className={styles.uploadArea} htmlFor="licenceInput">
-                    <span className={styles.uploadIcon}>📄</span>
                     <p className={styles.uploadTitle}>Upload Licence Image</p>
                     <p className={styles.uploadDesc}>JPG, PNG or PDF — max 5MB</p>
                     <span className={styles.uploadBtn}>Choose File</span>
@@ -199,7 +195,6 @@ export default function Register() {
                   <div className={styles.licencePreviewBox}>
                     {licencePreview === "pdf" ? (
                       <div className={styles.pdfPreview}>
-                        <span className={styles.pdfIcon}>📑</span>
                         <p className={styles.pdfName}>{licenceFile?.name}</p>
                       </div>
                     ) : (

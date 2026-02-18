@@ -13,7 +13,7 @@ export default function Login() {
   const [error, setError] = useState("");
 
   const handleGoogle = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href = "https://backend-medic-production.up.railway.app/api/auth/google";
   };
 
   const handleEmailContinue = async () => {
@@ -79,7 +79,7 @@ export default function Login() {
       <Toaster />
       <div className={styles.card}>
         <div className={styles.logoWrap}>
-          <h1 className={styles.logo}>💊 PharmaChain</h1>
+          <h1 className={styles.logo}>PharmaChain</h1>
           <p className={styles.tagline}>Secure. Verified. Blockchain-powered.</p>
         </div>
 

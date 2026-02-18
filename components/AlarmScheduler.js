@@ -29,7 +29,7 @@ export default function AlarmScheduler({ times, medicineName, dosage }) {
               icon: "/pill-icon.png",
             });
           } else {
-            alert(`💊 Time to take your medicine!\n${medicineName} - ${dosage}`);
+            alert(`Time to take your medicine!\n${medicineName} - ${dosage}`);
           }
         }, delay);
 
