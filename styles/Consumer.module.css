@@ -1,0 +1,784 @@
+/* ============================================
+   PHARMACHAIN — CONSUMER DASHBOARD
+   Clean medical aesthetic with warm accents
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+.page {
+  min-height: 100vh;
+  background: #f4f6fb;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Navbar ── */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e8ecf4;
+  padding: 0 32px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+}
+
+.navLogo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a56db;
+  letter-spacing: -0.3px;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navUser {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.logoutBtn {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  transition: all 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.logoutBtn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* ── 3-Column Layout ── */
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr 340px;
+  gap: 0;
+  min-height: calc(100vh - 60px);
+}
+
+/* ============================================
+   LEFT COLUMN — Patient Details
+   ============================================ */
+.leftCol {
+  background: #ffffff;
+  border-right: 1px solid #e8ecf4;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.patientHeader {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.patientAvatarWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #e0eaff;
+}
+
+.patientAvatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.patientAvatarInitial {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a56db;
+}
+
+.patientName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.patientBadge {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1a56db;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #bfdbfe;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Detail rows */
+.detailSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailSectionTitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.detailRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.detailLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detailValue {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+  word-break: break-all;
+}
+
+.detailValueMono {
+  font-size: 11px;
+  font-weight: 500;
+  color: #475569;
+  font-family: 'DM Mono', monospace;
+  word-break: break-all;
+}
+
+.googleTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #1a56db;
+  font-weight: 500;
+}
+
+.emailTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Add Details Button */
+.addDetailsBtn {
+  width: 100%;
+  background: transparent;
+  border: 1.5px dashed #bfdbfe;
+  color: #1a56db;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.addDetailsBtn:hover {
+  background: #eff6ff;
+  border-color: #1a56db;
+}
+
+/* Edit Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+  backdrop-filter: blur(3px);
+}
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.modalField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.modalLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.modalInput {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.modalInput:focus {
+  border-color: #1a56db;
+  background: white;
+}
+
+.modalActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modalSave {
+  flex: 1;
+  background: #1a56db;
+  color: white;
+  border: none;
+  padding: 11px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.modalSave:hover {
+  background: #1447c0;
+}
+
+.modalCancel {
+  flex: 1;
+  background: #f1f5f9;
+  color: #64748b;
+  border: none;
+  padding: 11px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s;
+}
+
+.modalCancel:hover {
+  background: #e2e8f0;
+}
+
+/* ============================================
+   CENTER COLUMN — Main Actions
+   ============================================ */
+.centerCol {
+  padding: 28px 32px;
+  overflow-y: auto;
+}
+
+.centerTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.centerSubtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 28px;
+}
+
+/* Scan QR Button */
+.scanQrBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #1a56db 0%, #1447c0 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(26, 86, 219, 0.3);
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.scanQrBtn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+}
+
+.scanQrBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(26, 86, 219, 0.4);
+}
+
+.scanQrIcon {
+  font-size: 38px;
+  flex-shrink: 0;
+}
+
+.scanQrTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.scanQrDesc {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Divider */
+.orDivider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.orLine {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.orText {
+  font-size: 12px;
+  color: #94a3b8;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* Manual Entry Card */
+.scanCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #e8ecf4;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.scanTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.scanDesc {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  flex: 1;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 14px;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.input:focus {
+  border-color: #1a56db;
+  background: white;
+}
+
+.searchBtn {
+  background: #1a56db;
+  color: white;
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.searchBtn:hover {
+  background: #1447c0;
+}
+
+.searchBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorMsg {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* Info card */
+.infoCard {
+  background: #f0f7ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.infoIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.infoTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1447c0;
+  margin-bottom: 4px;
+}
+
+.infoText {
+  font-size: 12px;
+  color: #3b82f6;
+  line-height: 1.6;
+}
+
+/* ============================================
+   RIGHT COLUMN — My Prescriptions
+   ============================================ */
+.rightCol {
+  background: #ffffff;
+  border-left: 1px solid #e8ecf4;
+  padding: 28px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rightTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prescriptionCount {
+  background: #eff6ff;
+  color: #1a56db;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.loadingText {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+  padding: 20px;
+}
+
+.emptyBox {
+  text-align: center;
+  padding: 32px 16px;
+  background: #f8fafc;
+  border-radius: 14px;
+  border: 1.5px dashed #e2e8f0;
+}
+
+.emptyIcon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.emptyText {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.prescriptionList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prescriptionCard {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1.5px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prescriptionCard:hover {
+  background: white;
+  border-color: #bfdbfe;
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.08);
+  transform: translateY(-1px);
+}
+
+.prescriptionCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.prescriptionMedicine {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.prescriptionDosage {
+  background: #eff6ff;
+  color: #1a56db;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.prescriptionPharmacy {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.prescriptionSchedule {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.prescriptionArrow {
+  font-size: 12px;
+  color: #94a3b8;
+  text-align: right;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 240px 1fr 260px;
+  }
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .leftCol {
+    border-right: none;
+    border-bottom: 1px solid #e8ecf4;
+  }
+
+  .rightCol {
+    border-left: none;
+    border-top: 1px solid #e8ecf4;
+  }
+
+  .centerCol {
+    padding: 24px 20px;
+  }
+}
+
+/* ── Patient QR Card ── */
+.patientQrSection {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.patientQrTitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.patientQrImage {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  border: 3px solid #eff6ff;
+  padding: 6px;
+  background: white;
+}
+
+.patientQrHint {
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.patientQrDownload {
+  width: 100%;
+  background: #f0f7ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1a56db;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.patientQrDownload:hover {
+  background: #dbeafe;
+}
+
+.patientIdBox {
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.patientIdLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.patientIdValue {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e293b;
+  font-family: monospace;
+  margin-bottom: 8px;
+}
+
+.patientIdCopy {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1.5px solid #bfdbfe;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.patientIdCopy:hover {
+  background: #dbeafe;
+}

@@ -1,0 +1,856 @@
+.page {
+  min-height: 100vh;
+  background: #f0f4f8;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.3);
+}
+
+.navLogo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navUser {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.logoutBtn {
+  background: white;
+  color: #2563eb;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #eff6ff;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 32px 28px;
+  overflow-y: auto;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;  /* ← title on left, button on right */
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.pageTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.newBtn {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.newBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Form */
+.formCard {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 28px;
+  margin-bottom: 32px;
+}
+
+.formTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  background: #f8fafc;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #2563eb;
+  background: #fff;
+}
+
+.select {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.select:focus {
+  border-color: #2563eb;
+}
+
+.submitBtn {
+  background: #2563eb;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.submitBtn:hover {
+  background: #1d4ed8;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Cards grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* ← always 3 columns */
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  padding: 20px;
+  border: 1px solid #f1f5f9;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.medicineName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.patientName {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.badge {
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.schedule {
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.instructions {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.editBtn {
+  flex: 1;
+  border: 1.5px solid #2563eb;
+  color: #2563eb;
+  background: transparent;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.editBtn:hover {
+  background: #eff6ff;
+}
+
+.qrBtn {
+  flex: 1;
+  background: #2563eb;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.qrBtn:hover {
+  background: #1d4ed8;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: #94a3b8;
+}
+
+.emptyIcon {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+.emptyText {
+  font-size: 16px;
+}
+
+/* QR Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.modalSubtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.qrImage {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.modalHint {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 12px 0 20px;
+}
+
+.closeBtn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.closeBtn:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    padding: 14px 16px;
+  }
+}
+
+.codeBox {
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 12px 0;
+  text-align: center;
+}
+
+.codeLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.codeText {
+  font-size: 12px;
+  font-family: monospace;
+  color: #1e293b;
+  word-break: break-all;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.copyBtn {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1.5px solid #bfdbfe;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.copyBtn:hover {
+  background: #dbeafe;
+}
+
+/* Scan Patient Button in navbar */
+.scanPatientBtn {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.scanPatientBtn:hover {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* Patient Modal */
+.patientModal {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.patientModalHeader {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.patientModalTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.patientModalSubtitle {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Scan QR option button */
+.patientOptionBtn {
+  width: 100%;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.patientOptionBtn:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.patientOptionIcon {
+  font-size: 30px;
+  flex-shrink: 0;
+}
+
+.patientOptionText {
+  flex: 1;
+}
+
+.patientOptionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.patientOptionDesc {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.patientOptionArrow {
+  font-size: 18px;
+  color: #94a3b8;
+}
+
+/* Divider */
+.patientDivider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patientDividerLine {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.patientDividerText {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Manual input section */
+.patientInputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.patientInputLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.patientInput {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 14px;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.patientInput:focus {
+  border-color: #2563eb;
+  background: white;
+}
+
+.patientError {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+.patientSearchBtn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.patientSearchBtn:hover {
+  background: #1d4ed8;
+}
+
+.patientSearchBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.patientCancelBtn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+  padding: 4px;
+  font-family: inherit;
+}
+
+.patientCancelBtn:hover {
+  color: #475569;
+}
+
+.findPatientBtn {
+  background: white;
+  color: #2563eb;
+  border: 1.5px solid #2563eb;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.findPatientBtn:hover {
+  background: #eff6ff;
+}
+
+/* ── Add these styles to your Dashboard.module.css ── */
+
+/* Layout: sidebar + main side by side */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 60px);
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: white;
+  border-right: 1px solid #e2e8f0;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+}
+
+/* Avatar */
+.sidebarHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0 20px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 8px;
+}
+
+.avatarWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarInitial {
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+}
+
+.sidebarName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.sidebarBadge {
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Sections */
+.sidebarSection {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebarSectionTitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.sidebarRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebarLabel {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.sidebarValue {
+  font-size: 13px;
+  color: #1e293b;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.googleTag {
+  background: #fef9c3;
+  color: #854d0e;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.emailTag {
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.notSet {
+  color: #cbd5e1;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Stats grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.statBox {
+  background: white;
+  border-radius: 10px;
+  padding: 10px 8px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.statNumber {
+  font-size: 22px;
+  font-weight: 800;
+  color: #2563eb;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Licence */
+.licenceImgWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.licenceImg {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 120px;
+  border: 1px solid #e2e8f0;
+}
+
+.licenceViewBtn {
+  font-size: 12px;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+.licenceViewBtn:hover {
+  text-decoration: underline;
+}
+
+.licenceLink {
+  font-size: 13px;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.licenceLink:hover {
+  background: #eff6ff;
+}
+
+.noLicence {
+  padding: 8px 14px;
+  text-align: center;
+}
+
+.noLicenceText {
+  font-size: 12px;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+/* Responsive — hide sidebar on small screens */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
